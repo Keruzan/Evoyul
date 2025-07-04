@@ -1,0 +1,181 @@
+.about-hero-section2 {
+  position: relative;
+  width: 100%;
+  height: 80vh; 
+  overflow: hidden;
+}
+
+/* Background Image Container */
+.hero-background2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place behind content */
+}
+
+/* Background Overlay */
+.hero-overlay2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-dark overlay */
+}
+
+/* Hero Content Container */
+.hero-content2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Perfect centering */
+  text-align: center;
+  width: 100%; /* Full width for better text handling */
+}
+
+/* About Us Heading */
+.hero-title2 {
+  color: white;
+  font-size: 4rem; /* Large font size */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+ /* Text shadow for better readability */
+}
+
+
+.contact-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+ 
+}
+
+/* Top Section Styles */
+.contact-top {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.contact-details {
+  flex: 1;
+}
+
+.contact-details h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.description {
+  margin-bottom: 25px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.contact-info p {
+  margin: 12px 0;
+  color:black;
+}
+
+.contact-info strong {
+  font-weight: 600;
+}
+
+.contact-map {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-map iframe {
+  height: 400px;
+  border-radius: 8px;
+}
+
+.map-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 767px) {
+  /* About Hero Section */
+  .about-hero-section2  {
+    height: 60vh; /* Reduced from 80vh */
+  }
+
+  .hero-title2 {
+    font-size: 2rem; /* Reduced from 4rem */
+    letter-spacing: 0.3rem; /* Reduced from 0.5rem */
+    padding: 0 1rem; /* Added padding for mobile */
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 30px 15px; /* Reduced padding */
+  }
+
+  .contact-top {
+    flex-direction: column; /* Stack vertically */
+    gap: 30px; /* Reduced gap */
+    margin-bottom: 30px; /* Reduced margin */
+  }
+
+  .contact-details h2 {
+    font-size: 24px; /* Reduced from 28px */
+    margin-bottom: 15px; /* Reduced margin */
+  }
+
+  .description {
+    margin-bottom: 20px; /* Reduced margin */
+    font-size: 0.95rem; /* Slightly smaller text */
+  }
+
+  .contact-map iframe {
+    height: 300px; /* Reduced from 400px */
+  }
+
+  .map-footer {
+    gap: 10px; /* Reduced gap */
+    font-size: 11px; /* Smaller text */
+  }
+}
+
+/* Tablet Responsive Styles */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* About Hero Section */
+  .about-hero-section2 {
+    height: 70vh; /* Between mobile and desktop */
+  }
+
+  .hero-title2 {
+    font-size: 3rem; /* Between mobile and desktop */
+  }
+
+  /* Contact Section */
+  .contact-section {
+    padding: 40px 30px; /* Adjusted padding */
+  }
+
+  .contact-top {
+    gap: 30px; /* Reduced gap */
+  }
+
+  .contact-map iframe {
+    height: 350px; /* Between mobile and desktop */
+  }
+}
+
+
