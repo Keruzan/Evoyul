@@ -2,8 +2,9 @@
 
 import Link from 'next/link'
 import SocialIcons from '../app/components/SocialIcons';
+import HeroCanvas from './components/three/HeroCanvas';
 import Image from 'next/image';
-import { FaSearch, FaPenAlt, FaAd,FaEnvelope , FaSitemap, FaHashtag, FaFacebook, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
+import { FaSearch, FaPenAlt, FaAd, FaRobot, FaEnvelope , FaSitemap, FaHashtag, FaFacebook, FaInstagram, FaTwitter, FaLinkedinIn } from 'react-icons/fa';
 import React, { useState } from 'react';
 
 
@@ -18,6 +19,24 @@ import {
   SlideFromBottom
 
 } from '../app/animation';
+
+type ServiceCardProps = { icon: React.ReactNode; name: string; desc: string; delay: string; tag?: string; featured?: boolean };
+
+const ServiceCard = ({ icon, name, desc, delay, tag, featured }: ServiceCardProps) => (
+  <FadeFromBottom delay={delay} duration="slow">
+    <div className={`service-card${featured ? ' service-card--featured' : ''}`}>
+      {tag && <span className="service-tag">{tag}</span>}
+      <div className="service-content">
+        {icon}
+        <h3 className="service-name">{name}</h3>
+        <p className="service-description">{desc}</p>
+      </div>
+      <Link href="/services" className="service-button">
+        Read More
+      </Link>
+    </div>
+  </FadeFromBottom>
+);
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -99,10 +118,17 @@ const Header = () => {
       
       {/* Hero Section */}
       <section className="hero">
+        <HeroCanvas />
         <div className="hero-content">
           <FadeFromTop delay='400ms' duration='slow'>
         <h2>*Your trusted partner for digital success in the Bhutanese market*</h2>
         <h1>BHUTAN&apos;S LEADING DIGITAL MARKETING  <br />AGENCY</h1>
+        <ul className="hero-tags">
+          <li>Content Creation</li>
+          <li className="is-new">AI Agents</li>
+          <li>Social Media</li>
+          <li>Paid Ads</li>
+        </ul>
         </FadeFromTop>
         <FadeFromTop delay='600ms' duration='slow'>
         <Link href='/services'><button className="cta-button">VIEW MORE</button></Link>
@@ -114,7 +140,7 @@ const Header = () => {
         <FadeFromLeft>
         <div className="about-image">
           <Image
-            src="/images/group.jpg"
+            src="/images/group.JPG"
             alt="Evoyul Team"
             width={600}
             height={600}
@@ -174,102 +200,27 @@ const Header = () => {
           <h2 className="section-title">Our Services</h2>
           </FadeFromTop>
           <div className="services-grid">
-            {/* Upper Row - 2 Services */}
             <div className="service-row">
-              <FadeFromBottom delay="200ms" duration="slow">
-              <div className="service-card">
-                <div className="service-content">
-                  <FaSearch className="service-icon" />
-                  <h3 className="service-name">SEO</h3>
-                  <p className="service-description">
-                    Comprehensive SEO Strategy Development, On-Page Optimization
-                  </p>
-                </div>
-                <Link href="/services" className="service-button">
-                  Read More
-                </Link>
-              </div>
-              </FadeFromBottom>
-
-
-              <FadeFromBottom delay="400ms" duration="slow">
-              <div className="service-card">
-                <div className="service-content">
-                  <FaPenAlt className="service-icon" />
-                  <h3 className="service-name">Content Creation</h3>
-                  <p className="service-description">
-                    We craft compelling narratives that captivate and convert.
-                  </p>
-                </div>
-                <Link href="/services" className="service-button">
-                  Read More
-                </Link>
-              </div>
-              </FadeFromBottom>
+              <ServiceCard featured tag="Featured" delay="200ms" icon={<FaPenAlt className="service-icon" />} name="Content Creation"
+                desc="Reels, brand videos, photography, graphics and copy. We craft stories that captivate and convert." />
+              <ServiceCard featured tag="New" delay="400ms" icon={<FaRobot className="service-icon" />} name="AI Agents"
+                desc="Custom AI agents that answer customers, qualify leads and book appointments on WhatsApp, Instagram and your website, 24/7." />
             </div>
-            
-
-            <div className="service-row">
-              <FadeFromBottom delay="200ms" duration="slow">
-              <div className="service-card">
-                <div className="service-content">
-                  <FaAd className="service-icon" />
-                  <h3 className="service-name">Paid Advertising</h3>
-                  <p className="service-description">
-                    Specialized in crafting paid advertising campaigns that deliver measurable results.
-                  </p>
-                </div>
-                <Link href="/services" className="service-button">
-                  Read More
-                </Link>
-              </div>
-              </FadeFromBottom>
-              <FadeFromBottom delay="400ms" duration="slow">
-              <div className="service-card">
-                <div className="service-content">
-                  <FaHashtag className="service-icon" />
-                  <h3 className="service-name">Social Media Management</h3>
-                  <p className="service-description">
-                    Comprehensive social media management services that help your business connect, engage, and grow online.
-                  </p>
-                </div>
-                <Link href="/services" className="service-button">
-                  Read More
-                </Link>
-              </div>
-              </FadeFromBottom>
-              <FadeFromBottom delay="200ms" duration="slow">
-              <div className="service-card">
-                <div className="service-content">
-                  <FaSitemap className="service-icon" />
-                  <h3 className="service-name">Website Development</h3>
-                  <p className="service-description">
-                    Custom website development with responsive design and optimal performance.
-                    </p>
-                </div>
-                <Link href="/services" className="service-button">
-                  Read More
-                </Link>
-              </div>
-              </FadeFromBottom>
-              <FadeFromBottom delay="200ms" duration="slow">
-              <div className="service-card">
-                <div className="service-content">
-                  <FaEnvelope className="service-icon" />
-                  <h3 className="service-name">Email Marketing</h3>
-                  <p className="service-description">
-                    Build, Nurture, Convert - High-impact email campaigns that grow your audience and boost ROI.
-                    </p>
-                </div>
-                <Link href="/services" className="service-button">
-                  Read More
-                </Link>
-              </div>
-              </FadeFromBottom>
+            <div className="service-row three">
+              <ServiceCard delay="200ms" icon={<FaSearch className="service-icon" />} name="SEO"
+                desc="Comprehensive SEO Strategy Development, On-Page Optimization" />
+              <ServiceCard delay="300ms" icon={<FaAd className="service-icon" />} name="Paid Advertising"
+                desc="Specialized in crafting paid advertising campaigns that deliver measurable results." />
+              <ServiceCard delay="400ms" icon={<FaHashtag className="service-icon" />} name="Social Media Management"
+                desc="Comprehensive social media management services that help your business connect, engage, and grow online." />
             </div>
-            
+            <div className="service-row two">
+              <ServiceCard delay="200ms" icon={<FaSitemap className="service-icon" />} name="Website Development"
+                desc="Custom website development with responsive design and optimal performance." />
+              <ServiceCard delay="400ms" icon={<FaEnvelope className="service-icon" />} name="Email Marketing"
+                desc="Build, Nurture, Convert - High-impact email campaigns that grow your audience and boost ROI." />
+            </div>
           </div>
-          
         </div>
       </section>
     <section className="client-section">

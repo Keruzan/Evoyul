@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import SocialIcons from '../components/SocialIcons';
+import AIAgentsBand from '../components/AIAgentsBand';
 import Image from 'next/image';
 import '../services/services.css';
 import { FaSearch, FaPenAlt, FaAd, FaHashtag,FaFacebook, FaInstagram, FaTwitter, FaLinkedinIn, FaEnvelope, FaSitemap} from 'react-icons/fa';
@@ -209,8 +210,12 @@ const Header = () => {
           
           <div className="text-content1">
             <SlideFromRight delay='300ms' duration='slow'>
+            <span className="feature-badge">Featured service</span>
             <h2 className="title1">Content Creation</h2>
             <p className="subtitle1">Where creativity meets strategy</p>
+            <div className="formats">
+              <span>Reels and short video</span><span>Brand films</span><span>Photography</span><span>Graphic design</span><span>Copywriting</span>
+            </div>
             <p className="description1">
               Where creativity meets strategy to promote your brand&apos;s online presence. 
               Our team crafts compelling brand commercial videos and engaging creatives to engage your audience and achieve your business goals.
@@ -244,6 +249,8 @@ const Header = () => {
         </div>
         
       </section>
+
+      <AIAgentsBand />
 
       <section className="service-section2">
         <div className="service-content2">

@@ -158,7 +158,7 @@ const Header = () => {
           <div className="member-image">
             
             <div className="image-placeholder"><Image
-                        src="/images/pravin.jpg" 
+                        src="/images/pravin.JPG" 
                         alt="Evoyul Team"
                         width={400}
                         height={150}
@@ -178,7 +178,7 @@ const Header = () => {
           <div className="member-image">
             <div className="image-placeholder">
               <div className="image-placeholder"><Image
-                        src="/images/dipen.jpg" 
+                        src="/images/dipen.JPG" 
                         alt="Evoyul Team"
                         width={400}
                         height={200}
@@ -199,7 +199,7 @@ const Header = () => {
           <div className="member-image">
             <div className="image-placeholder">
               <div className="image-placeholder"><Image
-                        src="/images/kelzang.jpg" 
+                        src="/images/kelzang.JPG" 
                         alt="Evoyul Team"
                         width={300}
                         height={300}
